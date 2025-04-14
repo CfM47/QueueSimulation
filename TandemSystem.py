@@ -35,7 +35,7 @@ class TandemSystem:
     def arrival_time_generator(self):
         while True:
             t = self.generator.exponential(1 / self.max_lambda)
-            if random.rand() < self.lambda_t(t)/ self.max_lambda:
+            if random.rand() < self.lambda_t(self.time + t)/ self.max_lambda:
                 return t
 
     def gen_next_arrival(self):
